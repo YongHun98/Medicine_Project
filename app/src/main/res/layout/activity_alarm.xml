@@ -114,12 +114,77 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="시간"
+                        android:text="요일"
                         android:textStyle="bold"
                         android:textSize="18dp"/>
-
                 </LinearLayout>
+                <FrameLayout
+                    android:id="@+id/timelayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
+                    <TableLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TableRow>
+
+                            <Button
+                                android:id="@+id/mon"
+                                android:layout_weight="1"
+                                android:background="@drawable/primary_border_fill3"
+
+                                android:text="월"
+                                android:textColor="#000000" />
+
+                            <Button
+                                android:id="@+id/tue"
+                                android:layout_weight="1"
+                                android:background="@drawable/primary_border_fill3"
+                                android:text="화"
+                                android:textColor="#000000" />
+
+                            <Button
+                                android:id="@+id/wed"
+                                android:layout_weight="1"
+                                android:background="@drawable/primary_border_fill3"
+                                android:text="수"
+                                android:textColor="#000000" />
+
+                            <Button
+                                android:id="@+id/thu"
+                                android:layout_weight="1"
+                                android:background="@drawable/primary_border_fill3"
+                                android:text="목"
+                                android:textColor="#000000" />
+
+                            <Button
+                                android:id="@+id/fri"
+                                android:layout_weight="1"
+                                android:background="@drawable/primary_border_fill3"
+                                android:text="금"
+                                android:textColor="#000000" />
+
+                            <Button
+                                android:id="@+id/sat"
+                                android:layout_weight="1"
+                                android:background="@drawable/primary_border_fill3"
+                                android:text="토"
+                                android:textColor="#000000" />
+
+                            <Button
+                                android:id="@+id/sun"
+                                android:layout_weight="1"
+                                android:background="@drawable/primary_border_fill3"
+                                android:text="일"
+                                android:textColor="#000000" />
+
+                        </TableRow>
+                    </TableLayout>
+                </FrameLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
             </LinearLayout>
 
         </ScrollView>
