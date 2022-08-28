@@ -105,6 +105,7 @@
                         android:backgroundTint="@color/white"/>
 
                 </LinearLayout>
+
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -118,6 +119,7 @@
                         android:textStyle="bold"
                         android:textSize="18dp"/>
                 </LinearLayout>
+
                 <FrameLayout
                     android:id="@+id/timelayout"
                     android:layout_width="match_parent"
@@ -129,7 +131,7 @@
 
                         <TableRow>
 
-                            <Button
+                            <android.widget.Button
                                 android:id="@+id/mon"
                                 android:layout_weight="1"
                                 android:background="@drawable/primary_border_fill3"
@@ -137,42 +139,42 @@
                                 android:text="월"
                                 android:textColor="#000000" />
 
-                            <Button
+                            <android.widget.Button
                                 android:id="@+id/tue"
                                 android:layout_weight="1"
                                 android:background="@drawable/primary_border_fill3"
                                 android:text="화"
                                 android:textColor="#000000" />
 
-                            <Button
+                            <android.widget.Button
                                 android:id="@+id/wed"
                                 android:layout_weight="1"
                                 android:background="@drawable/primary_border_fill3"
                                 android:text="수"
                                 android:textColor="#000000" />
 
-                            <Button
+                            <android.widget.Button
                                 android:id="@+id/thu"
                                 android:layout_weight="1"
                                 android:background="@drawable/primary_border_fill3"
                                 android:text="목"
                                 android:textColor="#000000" />
 
-                            <Button
+                            <android.widget.Button
                                 android:id="@+id/fri"
                                 android:layout_weight="1"
                                 android:background="@drawable/primary_border_fill3"
                                 android:text="금"
                                 android:textColor="#000000" />
 
-                            <Button
+                            <android.widget.Button
                                 android:id="@+id/sat"
                                 android:layout_weight="1"
                                 android:background="@drawable/primary_border_fill3"
                                 android:text="토"
                                 android:textColor="#000000" />
 
-                            <Button
+                            <android.widget.Button
                                 android:id="@+id/sun"
                                 android:layout_weight="1"
                                 android:background="@drawable/primary_border_fill3"
@@ -182,11 +184,28 @@
                         </TableRow>
                     </TableLayout>
                 </FrameLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"/>
-            </LinearLayout>
 
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:orientation="horizontal"
+                    android:paddingLeft="5dp">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="메모"
+                        android:textStyle="bold"
+                        android:textSize="18dp"/>
+                    <EditText
+                        android:id="@+id/memo"
+                        android:layout_width="300dp"
+                        android:layout_height="200dp"
+                        android:layout_marginLeft="5dp"
+                        android:background="#20000000"/>
+
+                </LinearLayout>
+            </LinearLayout>
         </ScrollView>
     </LinearLayout>
 </RelativeLayout>
