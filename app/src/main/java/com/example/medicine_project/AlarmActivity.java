@@ -2,18 +2,30 @@ package com.example.medicine_project;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.Toast;
 
 public class AlarmActivity extends AppCompatActivity {
+    ImageView btn_back;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm);
+
+        btn_back = (ImageView) findViewById(R.id.btn_back);
+        btn_back.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                Intent intent = new Intent(getApplicationContext(),MenuActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
         Spinner spn = (Spinner) findViewById(R.id.medi_count_list);
 
