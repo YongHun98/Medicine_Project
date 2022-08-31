@@ -15,4 +15,13 @@
         tools:layout_editor_absoluteX="0dp"
         tools:layout_editor_absoluteY="48dp" />
 
+    <ListView
+        android:id="@+id/alarmlist"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        android:gravity="center" >
+    </ListView>
+
+
 </FrameLayout>
