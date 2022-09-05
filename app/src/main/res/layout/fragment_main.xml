@@ -8,20 +8,23 @@
     <!-- TODO: Update blank fragment layout -->
 
     <Button
-        android:id="@+id/bt2"
+        android:id="@+id/bt_setAR"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="알람설정"
-        tools:layout_editor_absoluteX="0dp"
-        tools:layout_editor_absoluteY="48dp" />
+        android:text="+ 약 추가하기"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/white"
+        android:layout_marginLeft="10dp"
+        android:gravity="left"/>
 
     <ListView
         android:id="@+id/alarmlist"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="40dp"
-        android:gravity="center" >
+        android:layout_marginTop="50dp"
+        android:gravity="center">
+
     </ListView>
-
-
 </FrameLayout>

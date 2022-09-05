@@ -2,4 +2,9 @@
     <string name="app_name">Medicine_Project</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- 약 상세페이지 -->
+    <string name="namedrug">약 이름</string>
+    <string name="ingdata">성분정보</string>
+    <string name="eftdata">효능효과</string>
 </resources>
