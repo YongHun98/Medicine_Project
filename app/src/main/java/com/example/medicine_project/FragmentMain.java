@@ -5,10 +5,14 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+
+
+import java.util.List;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,6 +59,7 @@ public class FragmentMain extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
@@ -64,7 +69,7 @@ public class FragmentMain extends Fragment {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
 
         //fragment에서 버튼 클릭으로 activity로 이동하기
-        Button alarmButton=(Button)view.findViewById(R.id.bt2);
+        Button alarmButton=(Button)view.findViewById(R.id.bt_setAR);
         alarmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -75,4 +80,5 @@ public class FragmentMain extends Fragment {
         });
         return view;
     }
+
 }

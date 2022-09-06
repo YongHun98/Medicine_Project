@@ -1,11 +1,15 @@
 package com.example.medicine_project;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+
+import java.util.List;
 
 public class MenuActivity extends AppCompatActivity implements View.OnClickListener{
     // 프래그먼트 객체 생성
@@ -33,6 +37,7 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
 
         // 어느 프레그먼트를 처음으로 프레임레이아웃에 띄울 것인지를 결정
         callFragment(FRAGMENT1);
+        initLoadDrugDatabase();
     }
     // 프래그먼트 클릭시
     @Override
@@ -84,5 +89,15 @@ public class MenuActivity extends AppCompatActivity implements View.OnClickListe
                 break;
         }
 
+    }
+    public List<Drug> initLoadDrugDatabase(){
+        DatabaseHelper databaseHelper = new DatabaseHelper(getApplicationContext());
+        databaseHelper.OpenDatabaseFile();
+
+        List<Drug> drugList = databaseHelper.getTableData();
+        Log.e("test", String.valueOf(drugList.size()));
+
+        databaseHelper.close();
+        return drugList;
     }
 }

@@ -34,9 +34,9 @@ public class Alarm {
     public Alarm(String drugName) {
         drug = new Drug(drugName);
     }
-    public Alarm(Drug drug, p2, p3. ...) {
+    /*public Alarm(Drug drug, p2, p3. ...) {
 
-    }
+    }*/
 
     public Drug getDrug() {
         return drug;

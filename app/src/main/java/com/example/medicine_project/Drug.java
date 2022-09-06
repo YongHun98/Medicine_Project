@@ -3,9 +3,12 @@ package com.example.medicine_project;
 public class Drug {
     private String companyName;
     private String drugName;
+    private String code;
     private String drugEffect;
     private String take;
     private String caution;
+    private String withWarm;
+    private String event;
     private String store;
     private String image;
     private String barcode;
@@ -19,15 +22,12 @@ public class Drug {
     }
     // 생성자 더 만들어야함
 
-    public Drug( p1, p2, p3, ...) {
+    //public Drug( p1, p2, p3, ...) {
 
-    }
+    //}
+
 
     public String getCompanyName() {
-        return companyName;
-    }
-    public String getCompanyName(String drugName) {
-        this.drugName = drugName;
         return companyName;
     }
 
@@ -89,5 +89,29 @@ public class Drug {
 
     public void setBarcode(String barcode) {
         this.barcode = barcode;
+    }
+
+    public String getWithWarm() {
+        return withWarm;
+    }
+
+    public void setWithWarm(String withWarm) {
+        this.withWarm = withWarm;
+    }
+
+    public String getCode() {
+        return code;
+    }
+
+    public void setCode(String code) {
+        this.code = code;
+    }
+
+    public String getEvent() {
+        return event;
+    }
+
+    public void setEvent(String event) {
+        this.event = event;
     }
 }
