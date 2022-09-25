@@ -9,34 +9,43 @@
     tools:context=".FragmentSearch">
 
     <LinearLayout
+        android:layout_marginLeft="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:orientation="horizontal">
         <AutoCompleteTextView
             android:id="@+id/txAutoComplete"
-            android:layout_width="match_parent"
+            android:paddingLeft="10dp"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:completionThreshold="1"
             android:hint="약 이름으로 검색하기"
-            android:completionHint="검색어를 입력하세요."
             android:inputType="text"/>
-
-       <!-- <EditText
-            android:layout_width="250dp"
-            android:layout_height="match_parent"
-            android:hint="약 이름으로 검색하기"
-            android:textColorLink="#979797"/>
         <Button
-            android:id="@+id/buttonSearch"
+            android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/searchbtn"
             android:text="검색"
-            android:textStyle="bold"
-            android:textColor="@color/white"
-            android:backgroundTint="#8FBC8F" />-->
+            android:backgroundTint="#8FBC8F"/>
+
+
+        <!-- <EditText
+             android:layout_width="250dp"
+             android:layout_height="match_parent"
+             android:hint="약 이름으로 검색하기"
+             android:textColorLink="#979797"/>
+         <Button
+             android:id="@+id/buttonSearch"
+             android:layout_width="wrap_content"
+             android:layout_height="match_parent"
+             android:layout_marginLeft="10dp"
+             android:layout_marginRight="10dp"
+             android:text="검색"
+             android:textStyle="bold"
+             android:textColor="@color/white"
+             android:backgroundTint="#8FBC8F" />-->
 
     </LinearLayout>
 
