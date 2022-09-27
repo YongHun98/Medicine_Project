@@ -3,31 +3,41 @@ package com.example.medicine_project;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class AlarmActivity extends AppCompatActivity {
     ImageView btn_back;
+    EditText medi, memo;
+    Spinner medi_count_list;
+    TextView alarmtime1, alarmtime2, alarmtime3;
+    Button timeplus, btn_save;
+    Integer[] day_array;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_alarm);
 
-        btn_back = (ImageView) findViewById(R.id.btn_back);
-        btn_back.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
-                Intent intent = new Intent(getApplicationContext(),MenuActivity.class);
-                startActivity(intent);
-
-            }
+        //뒤로가기 버튼
+        btn_back = findViewById(R.id.btn_back);
+        btn_back.setOnClickListener(view -> {
+            Intent i = new Intent(getApplicationContext(), MenuActivity.class);
+            i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            startActivity(i);
         });
 
-        Spinner spn = (Spinner) findViewById(R.id.medi_count_list);
+        //용량 스피너 설정
+        Spinner spn = findViewById(R.id.medi_count_list);
 
         ArrayAdapter<CharSequence> spn_adapter = ArrayAdapter.createFromResource(this, R.array.medi_count, android.R.layout.simple_spinner_item);
         spn_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -41,5 +51,43 @@ public class AlarmActivity extends AppCompatActivity {
 
             }
         });
+
+        //요일 버튼 클릭 시 색 변경
+        final Button[] day = new Button[7];
+        final Integer[] dayID = {R.id.mon, R.id.tue, R.id.wed, R.id.thu, R.id.fri, R.id.sat, R.id.sun};
+        int i;
+        day_array = new Integer[7];
+        for (i = 0; i < dayID.length; i++) {
+            day[i] = (Button) findViewById(dayID[i]);
+            day_array[i] = 0;
+        }
+
+        for (i = 0; i < dayID.length; i++) {
+            final int index;
+            index = i;
+            day[index].setOnClickListener(view -> {
+                if (day[index].getCurrentTextColor() == Color.BLACK) {
+                    day[index].setBackgroundResource(R.drawable.primary_border_fill);
+                    day[index].setTextColor(Color.WHITE);
+                    day_array[index] = 1;
+                }
+                else{
+                    day[index].setBackgroundResource(R.drawable.primary_border_fill3);
+                    day[index].setTextColor(Color.BLACK);
+                    day_array[index] = 0;
+                }
+            });
+        }
+
+        //시간 추가하기 버튼
+        timeplus = findViewById(R.id.timeplus);
+        timeplus.setOnClickListener(view -> {
+            TimePickerFragment mTimePickerFragment = new TimePickerFragment();
+            mTimePickerFragment.show(getSupportFragmentManager(), TimePickerFragment.FRAGMENT_TAG);
+        });
+
+        alarmtime1 = findViewById(R.id.alarmtime1);
+        alarmtime2 = findViewById(R.id.alarmtime2);
+        alarmtime3 = findViewById(R.id.alarmtime3);
     }
 }

@@ -29,7 +29,7 @@ public class FragmentMain extends Fragment {
         View view = inflater.inflate(R.layout.fragment_main, container, false);
 
         //fragment에서 버튼 클릭으로 activity로 이동하기
-        Button alarmButton=(Button)view.findViewById(R.id.bt_setAR);
+        Button alarmButton = view.findViewById(R.id.bt_setAR);
         alarmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
