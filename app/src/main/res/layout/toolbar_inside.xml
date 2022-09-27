@@ -25,10 +25,14 @@
             android:layout_height="match_parent"
             android:layout_marginLeft="30dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="알람설정"
+            android:gravity="center|left"
             android:textSize="20dp"
+            android:text="알람설정"
             android:textStyle="bold"/>
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"/>
 
         <Button
             android:id="@+id/btn_save"
@@ -37,7 +41,7 @@
             android:text="저장"
             android:textColor="@color/black"
             android:backgroundTint="@color/white"
-            android:layout_marginLeft="130dp"/>
+            android:layout_gravity="right" />
 
     </LinearLayout>
 
