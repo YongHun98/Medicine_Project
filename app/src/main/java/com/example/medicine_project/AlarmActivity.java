@@ -67,8 +67,8 @@ public class AlarmActivity extends AppCompatActivity {
             index = i;
             day[index].setOnClickListener(view -> {
                 if (day[index].getCurrentTextColor() == Color.BLACK) {
-                    day[index].setBackgroundResource(R.drawable.primary_border_fill);
-                    day[index].setTextColor(Color.WHITE);
+                    day[index].setBackgroundResource(R.drawable.primary_border_fill); //배경 색상
+                    day[index].setTextColor(Color.WHITE); //텍스트 색상
                     day_array[index] = 1;
                 }
                 else{
