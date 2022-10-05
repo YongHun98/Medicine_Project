@@ -1,12 +1,13 @@
 package com.example.medicine_project;
 
+
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 
-public class DBSearch extends SQLiteOpenHelper {
+public class DBHandler extends SQLiteOpenHelper {
 
     @Override
     public void onConfigure(SQLiteDatabase db) {
@@ -22,10 +23,10 @@ public class DBSearch extends SQLiteOpenHelper {
     private static final int DB_VERSION = 1;
 
     // below variable is for our table name.
-    private static final String TABLE_NAME = "drug";
+    private static final String TABLE_NAME = "list";    // 테이블 이름 바꿔서 테스트함
 
     // creating a constructor for our database handler.
-    public DBSearch(Context context) {
+    public DBHandler(Context context) {
         super(context, DB_NAME, null, DB_VERSION);
     }
 
@@ -43,30 +44,23 @@ public class DBSearch extends SQLiteOpenHelper {
     // 스캔한 바코드 번호 문자열을 입력받아
     // 데이터베이스에서 약 정보를 검색한 후
     // 약 객체를 만들어서 반환하는 메서드
-    public Drug search(String drugName) {
+    public Drug search(String barcode) {
         Drug drug = new Drug();
         // on below line we are creating a
         // database for reading our database.
         SQLiteDatabase db = this.getReadableDatabase();
+
         // on below line we are creating a cursor with query to read data from database.
-        //String drugName = "drugName";
-        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE `drugName` is " + drugName, null);
+        Cursor cursorCourses = db.rawQuery("SELECT * FROM " + TABLE_NAME + " WHERE `barcode` is " + barcode, null);
 
         // moving our cursor to first position.
-        if (cursor.moveToFirst()) {
-            drug.setCompanyName(cursor.getString(0));
-            drug.setDrugName(cursor.getString(1));
-            drug.setCode(cursor.getString(2));
-            drug.setDrugEffect(cursor.getString(3));
-            drug.setTake(cursor.getString(4));
-            drug.setCaution(cursor.getString(5));
-            drug.setWithWarm(cursor.getString(6));
-            drug.setEvent(cursor.getString(7));
-            drug.setStore(cursor.getString(8));
-            drug.setImage(cursor.getString(9));
-            drug.setBarcode(cursor.getString(10));
+        if (cursorCourses.moveToFirst()) {
+            drug.setCompanyName(cursorCourses.getString(0));
+            drug.setDrugName(cursorCourses.getString(1));
+            drug.setImage(cursorCourses.getString(9));
+            drug.setBarcode(barcode);
         }
-        cursor.close();
+        cursorCourses.close();
         return drug;
     }
 

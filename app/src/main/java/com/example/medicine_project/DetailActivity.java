@@ -55,7 +55,7 @@ public class DetailActivity extends AppCompatActivity {
         drugstr = getIntent().getStringExtra("drugName");
 
         dBSearch = new DBSearch(DetailActivity.this);
-        data = dBSearch.search();
+        data = dBSearch.search(drugstr);
 
         //뒤로가기 버튼으로 서치로 돌아가기 (잘 작동 안뎀) 서치에서 받는것도 해야함
         btn_back = findViewById(R.id.btn_back);
